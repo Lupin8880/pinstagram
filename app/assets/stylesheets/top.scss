@@ -1,0 +1,89 @@
+// Place all the styles related to the Top controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+header {
+  width: 100%;
+  background-color: #800000;
+  height: 54px;
+}
+.navbar-default {
+    border: 0;
+}
+.navbar {
+    background-color: transparent;
+    color: white;
+    margin-bottom: 0px;
+}
+.navbar-default {
+  .navbar-brand {
+    color: #ccc;
+    &:hover {
+      color: white;
+    }
+  }
+  .navbar-nav > li > a {
+    color: #ccc;
+    &:hover, &:focus {
+      color: white;
+    }
+  }
+  .navbar-nav > .open > a {
+    background-color: transparent;
+    color: white;
+    &:hover, &:focus {
+      background-color: transparent;
+      color: white;
+    }
+  }
+}
+@media (max-width: 767px) {
+.navbar-default .navbar-nav .open .dropdown-menu > li > a {
+    color: #ccc;
+    text-align: center;
+    &:hover, &:focus {
+      color: white;
+    }
+  }
+  .navbar-default .navbar-toggle {
+    background-color: transparent;
+    &:hover, &:focus {
+      background-color: transparent;
+    }
+  }
+}
+
+
+.main-header {
+  padding-bottom: 15%;
+  width: 100%;
+  background-size: cover;
+  background-image: url("topimage.jpg");
+  background-attachment: fixed;
+}
+.main-header img {
+  display: block;
+  margin: 0 auto;
+  width: 25%;
+  padding-top: 15%;
+}
+
+
+footer {
+  width: 100%;
+  background-color: #800000;
+  padding: 20px 0 10px 0;
+  color: white;
+  margin: auto;
+  font-size: 12px;
+  position: absolute;
+  bottom: 0;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  text-align: center;
+}
