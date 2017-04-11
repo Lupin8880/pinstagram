@@ -1,0 +1,10 @@
+<h1>Pinstagramに新しくピクチャーが投稿されました！</h1>
+
+<h4>title: <%= @picture.title %></h4>
+<p>content: <%= @picture.content %></p>
+<p><%= image_tag @picture.avatar %></p>
+
+
+<p>
+  <%= link_to '投稿されたピクチャーはこちら', pictures_url %>
+</p>

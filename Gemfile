@@ -38,6 +38,7 @@ gem 'twitter-bootstrap-rails'
 gem 'jquery-turbolinks'
 gem 'devise'
 gem 'faker'
+gem 'rails_admin'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -51,3 +52,7 @@ group :development, :test do
 end
 
 gem 'rails_12factor', group: :production
+
+group :development do
+  gem 'letter_opener_web'
+end
