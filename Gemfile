@@ -39,6 +39,7 @@ gem 'jquery-turbolinks'
 gem 'devise'
 gem 'faker'
 gem 'rails_admin'
+gem 'cancan'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
