@@ -40,6 +40,9 @@ gem 'devise'
 gem 'faker'
 gem 'rails_admin'
 gem 'cancan'
+gem 'omniauth'
+gem 'omniauth-twitter'
+gem 'omniauth-facebook'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -56,4 +59,5 @@ gem 'rails_12factor', group: :production
 
 group :development do
   gem 'letter_opener_web'
+  gem 'dotenv-rails'
 end

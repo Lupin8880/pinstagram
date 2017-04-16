@@ -59,6 +59,7 @@ header {
   background-size: cover;
   background-image: url("topimage.jpg");
   background-attachment: fixed;
+  height: 500px;
 }
 .main-header img {
   display: block;
@@ -90,5 +91,6 @@ body {
 
 .flash {
   color: white;
+  background-color: #800000;
   padding-top: 10px;
 }

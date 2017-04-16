@@ -1,6 +1,5 @@
 class PicturesController < ApplicationController
   before_action :authenticate_user!
-
   before_action :set_picture, only: [:edit, :update, :destroy]
 
   def index
@@ -51,12 +50,18 @@ class PicturesController < ApplicationController
     render :new if @picture.invalid?
   end
 
+  PERMISSIBLE_ATTRIBUTES = %i(name avatar avatar_cache)
+
   private
   def pictures_params
     params.require(:picture).permit(:title, :content, :avatar)
   end
   def set_picture
     @picture = Picture.find(params[:id])
+  end
+  def configure_permitted_parameters
+    devise_parameter_sanitizer.permit(:sign_up, keys: PERMISSIBLE_ATTRIBUTES)
+    devise_parameter_sanitizer.permit(:account_update, keys: PERMISSIBLE_ATTRIBUTES)
   end
 
 end
