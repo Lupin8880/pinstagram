@@ -5,6 +5,10 @@
         <%= link_to "ピクチャーを作成する", new_picture_path, class: 'btn btn-default'  %>
         <% @pictures.each do |picture| %>
           <div class="row">
+            <%= link_to picture_path(picture) do %>
+              <h4><strong><%= picture.title %></strong></h4>
+            <% end %>
+            <p><%= picture.content %></p>
             <p><%= image_tag picture.avatar %></p>
             <p><%= picture.user.name %></p>
               <%= link_to "編集", edit_picture_path(picture.id), class: 'btn btn-default btn-sm btn-success' %>

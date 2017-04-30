@@ -1,0 +1,14 @@
+<div class="container">
+  <div class="row ">
+    <h2><%= @user.name %>のフォローユーザー</h2>
+    <% @user.followers.each do |user| %>
+    <%= render 'followerpage', {follow_user: user} %>
+  </div>
+  <% end %>
+  <div class="row ">
+    <h2><%= @user.name %>のフォロワー</h2>
+    <% @user.followed_users.each do |user| %>
+    <%= render 'followedpage', {followd: user} %>
+  </div>
+  <% end %>
+</div>

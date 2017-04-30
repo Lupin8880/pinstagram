@@ -6,7 +6,10 @@ class User < ActiveRecord::Base
 
   mount_uploader :avatar, AvatarUploader
 
-  has_many :pictures
+  has_many :pictures, dependent: :destroy
+  has_many :comments, dependent: :destroy
+  has_many :relationships, foreign_key: "follower_id", dependent: :destroy
+  has_many :reverse_relationships, foreign_key: "followed_id", class_name: "Relationship", dependent: :destroy
 
   def self.find_for_twitter_oauth(auth, signed_in_resource = nil)
   user = User.find_by(provider: auth.provider, uid: auth.uid)
@@ -56,5 +59,21 @@ def update_with_password(params, *options)
     update_without_password(params, *options)
   end
 end
+
+def follow!(other_user)
+  relationships.create!(followed_id: other_user.id)
+end
+
+#フォローしているかどうかを確認する
+def following?(other_user)
+  relationships.find_by(followed_id: other_user.id)
+end
+
+def unfollow!(other_user)
+  relationships.find_by(followed_id: other_user.id).destroy
+end
+
+has_many :followed_users, through: :relationships, source: :followed
+has_many :followers, through: :reverse_relationships, source: :follower
 
 end
