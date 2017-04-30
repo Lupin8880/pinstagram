@@ -5,7 +5,7 @@ ja:
       contact: "お問い合わせ"
       user: "ユーザー"
     attributes:
-      topic:
+      picture:
         title: "タイトル"
         content: "内容"
       blog:
